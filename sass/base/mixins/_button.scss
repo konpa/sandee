@@ -1,0 +1,26 @@
+@mixin btn($size, $bg-color) {
+  @if ($size == sm) {
+    padding: rem(4) rem(6);
+    font-size: rem(12);
+  }
+  @if ($size == md) {
+    padding: rem(6) rem(8);
+    font-size: rem(14);
+  }
+  font-family: $sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #fff;
+  background: $bg-color;
+  border-radius: 2px;
+  cursor: pointer;
+  -webkit-font-smoothing: inherit;
+
+  i {
+    margin-right: rem(5);
+  }
+
+  &:hover {
+    background: darken($bg-color, 10%);
+  }
+}

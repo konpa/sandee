@@ -1,0 +1,218 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
+
+@import
+'bourbon',
+'base/base',
+'neat';
+
+
+// ======================================
+
+
+//
+// Header
+//
+
+.hdr {
+  overflow: hidden;
+  text-align: center;
+  background: $sand;
+}
+
+.hdr-title {
+  position: relative;
+  top: rem(20);
+  display: inline-block;
+  padding: rem(50) 0 0;
+  margin: 0 auto;
+  font-size: rem(60);
+
+  a {
+    color: inherit;
+  }
+
+  .trans-ltr {
+    color: $sand;
+  }
+
+  &:after {
+    position: relative;
+    top: rem(-20);
+    left: -2%;
+    display: block;
+    width: 104%;
+    height: rem(4);
+    background: $brown1;
+    content: '';
+  }
+}
+
+.hdr-logo {
+  position: absolute;
+  top: rem(8);
+  left: rem(73);
+  max-width: rem(100);
+}
+
+
+/// ======================================
+
+
+//
+// Body
+//
+
+.bd {
+  max-width: rem(400);
+  margin: rem(70) auto;
+}
+
+.bd-title {
+  font-size: rem(25);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bd-title__add-btn {
+  position: relative;
+  top: rem(-5);
+  display: inline-block;
+  float: right;
+
+  a {
+    @include btn(sm, $green1);
+  }
+}
+
+.bd-content {
+  margin: rem(40) 0 0;
+}
+
+
+/// ======================================
+
+
+//
+// Sandboxes page
+//
+
+.sdbx {
+  @extend %box;
+  margin: 0 0 rem(40);
+
+  header {
+    margin-bottom: rem(10);
+  }
+}
+
+.sdbx-state {
+  float: left;
+  width: rem(50);
+  margin-right: rem(15);
+  text-align: center;
+
+  i {
+    position: relative;
+    top: rem(7);
+    display: block;
+    margin-bottom: rem(10);
+    font-size: rem(30);
+  }
+
+  .fa-play,
+  .fa-stop {
+    cursor: pointer;
+  }
+
+  .fa-play:hover {
+    color: $green1;
+  }
+}
+
+.sdbx-title {
+  display: inline-block;
+}
+
+.sdbx-btn {
+  display: inline-block;
+  margin-right: rem(10);
+
+  div {
+    display: inline-block;
+  }
+
+  a,
+  div {
+    @include btn(sm, $green1);
+  }
+
+  i {
+    position: relative;
+    top: rem(1);
+    font-size: rem(16);
+  }
+}
+
+.sdbx-url {
+
+  i {
+    top: rem(2);
+  }
+}
+
+.sdbx-editor {
+  line-height: rem(16);
+}
+
+
+/// ======================================
+
+
+//
+// Add page
+//
+
+.add-form {
+  @extend %box;
+
+  label {
+    font-size: rem(14);
+    text-transform: uppercase;
+  }
+}
+
+.add-form__btns {
+  margin-top: rem(20);
+  text-align: right;
+
+  button,
+  a {
+    @include btn(md, $green1);
+    margin-left: rem(10);
+  }
+
+  button {
+    position: relative;
+    top: rem(-1);
+    line-height: rem(19);
+  }
+}
+
+
+/// ======================================
+
+
+//
+// Sandbox page
+//
+
+.sdbx-sgl {
+  @extend %box;
+}
+
+.sdbx-sgl__delete {
+  @include btn(md, $red);
+  margin-top: rem(40);
+  text-align: center;
+}

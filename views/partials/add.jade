@@ -1,0 +1,10 @@
+h2.bd-title New Sandbox
+
+div.bd-content
+    form.add-form
+        label(for="name") Name
+        input(type="text" name="name" id="name" ng-model="name")
+
+        div.add-form__btns
+            button(ng-click="addSandbox(name)") Create
+            a(href="/") Cancel

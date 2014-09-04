@@ -1,0 +1,31 @@
+h2.bd-title Sandboxes
+    div.bd-title__add-btn
+        a(href="/add")
+            i.fa.fa-plus
+            | New
+
+div.bd-content.sdbxs
+
+    article.sdbx(ng-if="sandboxes.length < 1") No Sandboxes.
+        a(href="/add")  Create one.
+
+    article.sdbx(ng-repeat="sandbox in sandboxes")
+        div.sdbx-state
+            i.fa.fa-refresh(is-launched="isLaunched(sandbox.name)")
+            i.fa(is-launched-btn="isLaunched(sandbox.name)", ng-click="gulp(sandbox)")
+        div.sdbx-right
+            header
+                h2.sdbx-title {{sandbox.name}}
+            div.sdbx-options
+                div.sdbx-btn.sdbx-url
+                    a(href="http://localhost:{{sandbox.port}}", target="_blank")
+                        i.fa.fa-external-link
+                        | Url
+                div.sdbx-btn.sdbx-editor
+                    div(ng-click="launchEditor(sandbox)")
+                        i.fa.fa-code
+                        | Editor
+                div.sdbx-btn.sdbx-config
+                    a(href="/sandboxes/{{sandbox.name}}")
+                        i.fa.fa-gear
+                        | Config
