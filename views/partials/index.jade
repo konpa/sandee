@@ -18,7 +18,7 @@ div.bd-content.sdbxs
                 h2.sdbx-title {{sandbox.name}}
             div.sdbx-options
                 div.sdbx-btn.sdbx-url
-                    a(href="http://localhost:{{sandbox.port}}", target="_blank")
+                    a(href="http://localhost:{{config.sandboxes_port + sandbox.id}}", target="_blank")
                         i.fa.fa-external-link
                         | Url
                 div.sdbx-btn.sdbx-editor

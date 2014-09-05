@@ -25,6 +25,7 @@ var express = require('express'),
     spawn = require('child_process').spawn,
     session = require('express-session');
 
+var config = require('./sandee.json');
 var app = module.exports = express();
 
 
@@ -37,7 +38,7 @@ var os = process.platform;
 var isWindows = (process.platform == "win32" || process.platform == "win64") ? true : false;
 
 // all environments
-app.set('port', process.env.PORT || 3000);
+app.set('port', config.port);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(session({secret: 'sandee'}));

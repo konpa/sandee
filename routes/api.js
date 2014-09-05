@@ -17,6 +17,8 @@ var express = require('express'),
     helpers = require('../helpers.js'),
     config = require('../sandee.json');
 
+var config = require('../sandee.json');
+
 // Configure ncp
 ncp.limit = 16;
 
@@ -29,6 +31,17 @@ var db = openDB('sandboxes/sandboxes.json');
 // Detect OS
 var os = process.platform;
 var isWindows = (process.platform == "win32" || process.platform == "win64") ? true : false;
+
+
+/**
+* Return sandee config
+*
+* @return json
+*/
+router.get('/config', function(req, res) {
+
+    return res.json(config);
+});
 
 
 /**
@@ -98,7 +111,7 @@ router.get('/sandboxes/add/:name', function(req, res) {
 
             // Write config file
             var config = {
-                "port": 5000 + id
+                "port_nb": id
             };
 
             fs.writeFile(destination + '/config.json', JSON.stringify(config, null, 4), function(err) {

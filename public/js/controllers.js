@@ -89,6 +89,19 @@ angular.module('myApp.controllers', []).
 
 
         /**
+        * Get sandee config from API
+        */
+        $http
+            .get('/api/config')
+            .success(function (data, status, headers, config) {
+                $scope.config = data;
+            })
+            .error(function (data, status, headers, config) {
+                console.log('Error getting sandee config');
+            });
+
+
+        /**
         * Send Start/Stop gulp order to API
         *
         * @params sandbox

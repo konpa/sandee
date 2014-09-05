@@ -1,3 +1,6 @@
 {
+    "port" : 3000,
+    "dev_port": 4000,
+    "sandboxes_port": 6000,
     "editor": "atom"
 }

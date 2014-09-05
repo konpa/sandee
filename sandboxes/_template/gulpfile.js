@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     plumber = require("gulp-plumber"),
     concat = require('gulp-concat');
 
-var config = require('./config.json');
+var global_config = require('../../sandee.json');
+var sandbox_config = require('./config.json');
 
 
 /*
@@ -18,7 +19,7 @@ gulp.task('styles', function () {
         .pipe(sass({
             includePaths: ['styles'].concat(neat),
             errLogToConsole: true,
-            sourceComments: 'map',
+            sourceComments: 'none',
             sourceMap: 'sass'
         }))
         .pipe(gulp.dest("./"));
@@ -64,7 +65,7 @@ gulp.task('browser-sync', function () {
        server: {
             baseDir: './'
         },
-        port: config.port,
+        port: global_config.sandboxes_port + sandbox_config.port_nb,
         open: false
 
     });

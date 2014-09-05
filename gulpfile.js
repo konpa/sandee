@@ -6,6 +6,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean');
 
+var config = require('./sandee.json');
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +54,7 @@ gulp.task('browser-sync', function () {
     ];
 
     browserSync.init(files, {
-        port: 4000,
+        port: config.dev_port,
         proxy: 'localhost:3000',
         open: false
     });
